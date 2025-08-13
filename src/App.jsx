@@ -39,7 +39,7 @@ function App() {
   return (
     <div className='app'>
       <h1>위키백과 검색</h1>
-      <div className="error">에러 코드</div>
+
       <div className="search">
         <input
           ref={inputRef}
@@ -52,11 +52,10 @@ function App() {
         </button>
       </div>
 
-      {err && <div className="error">에러 코드</div>}
+      {err && <div className="error">{err}</div>}
 
       <ul className='list'>
         {items.map((p) => (
-
           <li key={p.id}>
             <div>
               <strong>{p.title}</strong>
@@ -65,10 +64,10 @@ function App() {
             </div>
           </li>
         ))}
-
       </ul>
     </div>
   )
+
 }
 
 export default App
